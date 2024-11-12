@@ -1,0 +1,10 @@
+name: pushイベントで発火するワークフロー
+
+on:
+  push
+
+jobs:
+  check_push_event_workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello World with push event"

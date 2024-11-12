@@ -1,0 +1,10 @@
+name: pull_requestイベントで発火するワークフロー
+
+on:
+  pull_request
+
+jobs:
+  check_pull_request_event_workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello World with pull request event"
