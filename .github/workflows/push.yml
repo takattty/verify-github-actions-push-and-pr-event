@@ -8,4 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello World with push event"
-      - run: ${{ github.ref }}
+      - name: Check GITHUB_REF
+        run: |
+          echo "GITHUB_REF: $GITHUB_REF"
+          echo "GITHUB_REF_NAME: $GITHUB_REF_NAME"
+          echo "GITHUB_SHA: $GITHUB_SHA"
