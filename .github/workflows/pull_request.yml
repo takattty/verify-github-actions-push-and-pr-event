@@ -5,6 +5,9 @@ on:
 
 jobs:
   check_pull_request_event_workflow:
+    strategy:
+        matrix:
+          job-number: [1, 2]  # 2つの並列ジョブ
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello World with push event"
