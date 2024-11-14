@@ -1,0 +1,10 @@
+name: 再利用される方のワークフロー
+
+on:
+  workflow_call
+
+jobs:
+  check_pull_request_event_workflow:
+      runs-on: ubuntu-latest
+      steps:
+        - run: echo "Hello World with reuse workflow"
