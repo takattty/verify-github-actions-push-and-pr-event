@@ -4,6 +4,8 @@ on:
   pull_request
 
 jobs:
+  reusable_workflow_job:
+    uses: ./.github/workflows/reuse.yml
   check_pull_request_event_workflow:
     strategy:
         matrix:

@@ -4,6 +4,8 @@ on:
   push
 
 jobs:
+  reusable_workflow_job:
+    uses: ./.github/workflows/reuse.yml
   check_push_event_workflow:
     strategy:
         matrix:
