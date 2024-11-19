@@ -5,7 +5,7 @@ on:
 
 jobs:
   call-hello:
-    uses: ./.github/workflows/reusable-hello.yml
+    uses: ./.github/workflows/reuse.yml
     with:
       name: 'GitHub'
   check_pull_request_event_workflow:
