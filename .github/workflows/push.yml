@@ -13,3 +13,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello World with push event"
+      - name: Print time
+        run: echo "Hello was said at ${{ needs.call-hello.outputs.time }}"
