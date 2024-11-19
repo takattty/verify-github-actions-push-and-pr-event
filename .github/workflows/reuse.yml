@@ -1,0 +1,28 @@
+name: Reusable Hello World Workflow
+
+on:
+  workflow_call:
+    inputs:
+      name:
+        description: 'Name to say hello to'
+        required: false
+        default: 'World'
+        type: string
+    outputs:
+      time:
+        description: 'The time when hello was said'
+        value: ${{ jobs.hello-job.outputs.job-time }}
+
+jobs:
+  hello-job:
+    runs-on: ubuntu-latest
+    outputs:
+      job-time: ${{ steps.time.outputs.time }}
+      
+    steps:
+      - name: Say Hello
+        run: echo "Hello, ${{ inputs.name }}!"
+        
+      - name: Get Time
+        id: time
+        run: echo "time=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_OUTPUT
